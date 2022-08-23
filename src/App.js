@@ -7,9 +7,14 @@ import Card from "./components/Card/Card";
 import Pagination from "./components/Pagination/Pagination";
 import Filter from "./components/Filter/Filter";
 import Navbar from "./components/Navbar/Navbar";
-
+import Episodes from "./Pages/Episodes";
+import Location from "./Pages/Location";
 
 function App() {
+
+  let [status, updateStatus] = useState("");
+  let [gender, updateGender] = useState("");
+  let [species, updateSpecies] = useState("");
 
   let [pageNumber, updatePageNumber] = useState(1);
   let [search, setSearch] = useState("");
@@ -17,7 +22,7 @@ function App() {
   let [fetchedData, updateFetchedData] = useState([]);
   let { info, results } = fetchedData;
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
   useEffect(() => {
     (async function () {
@@ -32,7 +37,14 @@ function App() {
        <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
        <div className="container">
        <div className="row">
-         Filter component will be placed here
+         <Filter 
+           pageNumber={pageNumber}
+           status={status}
+           updateStatus={updateStatus}
+           updateGender={updateGender}
+           updateSpecies={updateSpecies}
+           updatePageNumber={updatePageNumber} 
+         />
          <div className="col-lg-8 col-12">
            <div className="row">
              <Card results={results} />

@@ -1,3 +1,11 @@
+This project doesn't belong to me and is for practical purposes.
+It presents cards, filters, pagination and more, consuming Rick and Morty's API.
+
+https://rickandmortyapi.com/
+
+Font: https://www.freecodecamp.org/espanol/news/proyecto-reactjs-crea-un-wiki-de-personajes-de-rick-y-morty/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
